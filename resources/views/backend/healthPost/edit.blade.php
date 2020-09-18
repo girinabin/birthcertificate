@@ -55,9 +55,9 @@
                                 <div class="form-group col-md-4 float-left">
                                     <div class="text text-danger">{{ $errors->first('registrationDate') }}</div>
                                     <label for="registrationDate">{{ __('Registration Date') }}</label>
-                                    <input  type="date" name="registrationDate" id="registrationDate"
+                                    <input  type="text" name="registrationDate" id="dobInEnglish"
                                         class="form-control" value="{{ $healthPost->registrationDate }}"
-                                        placeholder="{{ __('Registration Date') }}" >
+                                        placeholder="yy-mm-dd}" >
                                 </div>
                                 <div class="form-group col-md-4 float-left">
                                     <div class="text text-danger">{{ $errors->first('panNumber') }}</div>

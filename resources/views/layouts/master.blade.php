@@ -9,6 +9,11 @@
   <title>BirthCenter Management</title>
 
   <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+  <!--nepali date picker -->
+  <link rel="stylesheet" type="text/css" href="{{ asset('nepalidatepicker/nepali.datepicker.v2.2.min.css') }}" />
+  {{-- english date picker --}}
+  {{-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css"> --}}
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css">
 </head>
 
 <body class="hold-transition sidebar-mini">
@@ -19,6 +24,11 @@
     @include('layouts/partials/footer')
   </div>
   <script src="{{ asset('js/app.js') }}"></script>
+  <!-- nepali date picker -->
+<script type="text/javascript" src="{{ asset('nepalidatepicker/nepali.datepicker.v2.2.min.js') }}"></script>
+{{-- english daete picker --}}
+{{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script> --}}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
   <script>
     $(document).ready( function () {
     $('#table_id').DataTable();
@@ -37,6 +47,30 @@
 		$('.backlink').click(function(){
 			window.history.back();
 		});
+	});
+</script>
+<script type="application/javascript">
+
+	$(document).ready(function(){
+
+		$('.nepaliDate').nepaliDatePicker({
+			npdMonth: true,
+			npdYear: true,
+		});
+
+
+	});
+</script>
+
+<script type="application/javascript">
+
+	$(document).ready(function(){
+
+		$('#dobInEnglish').datepicker({
+			dateFormat:"yy-mm-dd"
+		});
+
+
 	});
 </script>
 

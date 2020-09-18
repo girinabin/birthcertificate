@@ -14,20 +14,28 @@ class HealthPostController extends Controller
         $this->middleware('auth');
     }
     public function index(){
+        $this->authorize('superAdmin', User::class);
+
         $healthPosts = HealthPost::with(['municipality','user'])->orderBy('healthPostName','ASC')->get();
 
         return view('backend.healthPost.index',compact('healthPosts'));
     }
 
     public function create(){
+        $this->authorize('superAdmin', User::class);
+
         return view('backend.healthPost.create');
     }
 
     public function edit(HealthPost $healthPost){
+        $this->authorize('superAdmin', User::class);
+
         return view('backend.healthPost.edit',compact('healthPost'));
     }
 
     public function store(Request $request){
+        $this->authorize('superAdmin', User::class);
+
 
         $data = $request->validate([
             'healthPostName'=>'required',
@@ -68,6 +76,8 @@ class HealthPostController extends Controller
     }
 
     public function update(Request $request,HealthPost $healthPost){
+        $this->authorize('superAdmin', User::class);
+
         $data = $request->validate([
             'healthPostName'=>'required',
             'email'=>'required|email',
@@ -99,6 +109,8 @@ class HealthPostController extends Controller
     }
 
     public function delete(HealthPost $healthPost){
+        $this->authorize('superAdmin', User::class);
+
         $result = HealthPost::where(['id'=>$healthPost->id])->delete();
         $user = User::where(['id'=>$healthPost->user_id])->delete();
         

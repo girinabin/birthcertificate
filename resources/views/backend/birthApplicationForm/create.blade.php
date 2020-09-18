@@ -41,98 +41,109 @@
 
                                                 <div class="form-group">
                                                     <div class="text text-danger">
-                                                        {{ $errors->first('genderInEnglish') }}</div>
-                                                    <label for="genderInEnglish">Gender<i
+                                                        {{ $errors->first('genderInNepali') }}</div>
+                                                    <label for="genderInNepali">Gender<i
                                                             class="text-danger">*</i></label>
-                                                    <select class="form-control " name="genderInEnglish"
+                                                    <select class="form-control " name="genderInNepali"
                                                         >
                                                         <option selected disabled>Select Gender</option>
                                                         <option value="Male"
-                                                            {{ (old("genderInEnglish") == "Male" ? "selected":"") }}>
+                                                            {{ (old("genderInNepali") == "Male" ? "selected":"") }}>
                                                             {{ __('Male') }}
                                                         </option>
                                                         <option value="Female"
-                                                            {{ (old("genderInEnglish") == "Female" ? "selected":"") }}>
+                                                            {{ (old("genderInNepali") == "Female" ? "selected":"") }}>
                                                             {{ __('Female') }}</option>
                                                         <option value="Other"
-                                                            {{ (old("genderInEnglish") == "Other" ? "selected":"") }}>
+                                                            {{ (old("genderInNepali") == "Other" ? "selected":"") }}>
                                                             {{ __('Other') }}</option>
                                                     </select>
                                                 </div>
 
                                                 <div class="form-group">
+                                                    <div class="text text-danger">{{ $errors->first('dobInNepali') }}
+                                                    </div>
+                                                    <label for="dobInNepali">{{ __('Date of Birth') }}<i
+                                                            class="text-danger">*</i></label>
+                                                    <input type="text" name="dobInNepali" id="dobInNepali"
+                                                        class="form-control nepaliDate " value="{{ old('dobInNepali') }}"
+                                                        autocomplete="off" placeholder="yy-mm-dd"  >
+                                                </div>
+                                               
+
+                                                <div class="form-group">
                                                     <div class="text text-danger">{{ $errors->first('dobInEnglish') }}
                                                     </div>
-                                                    <label for="dobInEnglish">{{ __('Date of Birth') }}<i
+                                                    <label for="dobInEnglish">{{ __('Date of Birth English') }}<i
                                                             class="text-danger">*</i></label>
-                                                    <input type="date" name="dobInEnglish" id="dobInEnglish"
-                                                        class="form-control " value="{{ old('dobInEnglish') }}"
-                                                        autocomplete="off" placeholder="" >
+                                                    <input type="text" name="dobInEnglish" id="dobInEnglish"
+                                                        class="form-control  " value="{{ old('dobInEnglish') }}"
+                                                        autocomplete="off" placeholder="yy-mm-dd"  >
                                                 </div>
 
 
                                                 <div class="form-group">
                                                     <div class="text text-danger">
-                                                        {{ $errors->first('timeOfBirthInEnglish') }}</div>
-                                                    <label for="timeOfBirthInEnglish">{{ __('Time of Birth') }}<i
+                                                        {{ $errors->first('timeOfBirthInNepali') }}</div>
+                                                    <label for="timeOfBirthInNepali">{{ __('Time of Birth') }}<i
                                                             class="text-danger">*</i></label>
-                                                    <input type="time" name="timeOfBirthInEnglish"
-                                                        id="timeOfBirthInEnglish" class="form-control"
-                                                        value="{{ old('timeOfBirthInEnglish') }}" autocomplete="off"
+                                                    <input type="time" name="timeOfBirthInNepali"
+                                                        id="timeOfBirthInNepali" class="form-control"
+                                                        value="{{ old('timeOfBirthInNepali') }}" autocomplete="off"
                                                         >
                                                 </div>
 
                                                 <div class="form-group">
                                                     <div class="text text-danger">
-                                                        {{ $errors->first('weightOfBabyInEnglish') }}</div>
-                                                    <label for="weightOfBabyInEnglish">{{ __('Weight') }}<i
+                                                        {{ $errors->first('weightOfBabyInNepali') }}</div>
+                                                    <label for="weightOfBabyInNepali">{{ __('Weight') }}<i
                                                             class="text-danger">*</i></label>
-                                                    <input type="number" name="weightOfBabyInEnglish"
-                                                        id="weightOfBabyInEnglish" class="form-control"
-                                                        value="{{ old('weightOfBabyInEnglish') }}" autocomplete="off"
+                                                    <input type="number" name="weightOfBabyInNepali"
+                                                        id="weightOfBabyInNepali" class="form-control"
+                                                        value="{{ old('weightOfBabyInNepali') }}" autocomplete="off"
                                                        placeholder="Enter Weight of Baby" >
                                                 </div>
 
                                                 <div class="form-group">
                                                     <div class="text text-danger">
-                                                        {{ $errors->first('fatherNameInEnglish') }}</div>
-                                                    <label for="fatherNameInEnglish">Father Name<i
+                                                        {{ $errors->first('fatherNameInNepali') }}</div>
+                                                    <label for="fatherNameInNepali">Father Name<i
                                                             class="text-danger">*</i></label>
-                                                    <input type="text" name="fatherNameInEnglish"
-                                                        id="fatherNameInEnglish" class="form-control"
-                                                        value="{{ old('fatherNameInEnglish') }}"
+                                                    <input type="text" name="fatherNameInNepali"
+                                                        id="fatherNameInNepali" class="form-control"
+                                                        value="{{ old('fatherNameInNepali') }}"
                                                         placeholder="Father Name" >
                                                 </div>
 
                                                 <div class="form-group">
                                                     <div class="text text-danger">
-                                                        {{ $errors->first('motherNameInEnglish') }}</div>
-                                                    <label for="motherNameInEnglish">Mother Name<i
+                                                        {{ $errors->first('motherNameInNepali') }}</div>
+                                                    <label for="motherNameInNepali">Mother Name<i
                                                             class="text-danger">*</i></label>
-                                                    <input type="text" name="motherNameInEnglish"
-                                                        id="motherNameInEnglish" class="form-control"
-                                                        value="{{ old('motherNameInEnglish') }}"
+                                                    <input type="text" name="motherNameInNepali"
+                                                        id="motherNameInNepali" class="form-control"
+                                                        value="{{ old('motherNameInNepali') }}"
                                                         placeholder="{{ __("Baby's mother's Name") }}" >
                                                 </div>
                                                 <div class="form-group">
                                                     <div class="text text-danger">
-                                                        {{ $errors->first('grandParentNameInEnglish') }}</div>
-                                                    <label for="grandParentNameInEnglish">Grand Father Name</label>
-                                                    <input type="text" name="grandParentNameInEnglish"
-                                                        id="grandParentNameInEnglish" class="form-control"
-                                                        value="{{ old('grandParentNameInEnglish') }}"
+                                                        {{ $errors->first('grandParentNameInNepali') }}</div>
+                                                    <label for="grandParentNameInNepali">Grand Father Name</label>
+                                                    <input type="text" name="grandParentNameInNepali"
+                                                        id="grandParentNameInNepali" class="form-control"
+                                                        value="{{ old('grandParentNameInNepali') }}"
                                                         placeholder="{{ __("Grand Parent Name ") }}" >
                                                 </div>
 
 
                                                 <div class="form-group">
                                                     <div class="text text-danger">
-                                                        {{ $errors->first('provinceInEnglish') }}</div>
-                                                    <label for="provinceInEnglish">{{ __('Province') }}<i
+                                                        {{ $errors->first('provinceInNepali') }}</div>
+                                                    <label for="provinceInNepali">{{ __('Province') }}<i
                                                             class="text-danger">*</i></label>
                                                     <select class="form-control select2 input-lg dynamic"
-                                                        name="provinceInEnglish" id="" style="width: 100%;" 
-                                                        data-dependent="districtInEnglish">
+                                                        name="provinceInNepali" id="" style="width: 100%;" 
+                                                        data-dependent="districtInNepali">
                                                         <option selected="selected" disabled> {{ __('Province') }}
                                                         </option>
                                                         <option value="Province2">Province2</option>
@@ -143,13 +154,13 @@
 
                                                 <div class="form-group">
                                                     <div class="text text-danger">
-                                                        {{ $errors->first('districtInEnglish') }}</div>
-                                                    <label for="districtInEnglish">{{ __('District') }}<i
+                                                        {{ $errors->first('districtInNepali') }}</div>
+                                                    <label for="districtInNepali">{{ __('District') }}<i
                                                             class="text-danger">*</i></label>
                                                     <select class="form-control select2 input-lg dynamic"
-                                                        name="districtInEnglish" id="districtInEnglish"
+                                                        name="districtInNepali" id="districtInNepali"
                                                         style="width: 100%;" 
-                                                        data-dependent="municipalityInEnglish">
+                                                        data-dependent="municipalityInNepali">
                                                         <option selected="selected" disabled> {{ __('District') }}
                                                         </option>
                                                         <option value="Bara">Bara</option>
@@ -159,12 +170,12 @@
 
                                                 <div class="form-group">
                                                     <div class="text text-danger">
-                                                        {{ $errors->first('municipalityInEnglish') }}
+                                                        {{ $errors->first('municipalityInNepali') }}
                                                     </div>
                                                     <label
-                                                        for="municipalityInEnglish">{{ __('Gaupalika / Municipality') }}<i
+                                                        for="municipalityInNepali">{{ __('Gaupalika / Municipality') }}<i
                                                             class="text-danger">*</i></label>
-                                                    <select name="municipalityInEnglish" id="municipalityInEnglish"
+                                                    <select name="municipalityInNepali" id="municipalityInNepali"
                                                         class="form-control input-lg select2">
                                                         <option value="" selected disabled>
                                                             {{ __('Gaupalika / Municipality') }}</option>
@@ -174,31 +185,31 @@
 
                                                 <div class="form-group">
                                                     <div class="text text-danger">
-                                                        {{ $errors->first('wardNumberInEnglish') }}</div>
-                                                    <label for="wardNumberInEnglish">{{ __('Ward Number') }}<i
+                                                        {{ $errors->first('wardNumberInNepali') }}</div>
+                                                    <label for="wardNumberInNepali">{{ __('Ward Number') }}<i
                                                             class="text-danger">*</i></label>
-                                                    <input type="number" name="wardNumberInEnglish"
-                                                        id="wardNumberInEnglish" class="form-control"
-                                                        value="{{ old('wardNumberInEnglish') }}"
+                                                    <input type="number" name="wardNumberInNepali"
+                                                        id="wardNumberInNepali" class="form-control"
+                                                        value="{{ old('wardNumberInNepali') }}"
                                                         placeholder="{{ __('Ward Number') }}" >
                                                 </div>
 
                                                 <div class="form-group">
                                                     <div class="text text-danger">
-                                                        {{ $errors->first('villageInEnglish') }}</div>
-                                                    <label for="villageInEnglish">{{ __('Village / Tole') }}<i
+                                                        {{ $errors->first('villageInNepali') }}</div>
+                                                    <label for="villageInNepali">{{ __('Village / Tole') }}<i
                                                             class="text-danger">*</i></label>
-                                                    <input type="text" name="villageInEnglish" id="villageInEnglish"
-                                                        class="form-control" value="{{ old('villageInEnglish') }}"
+                                                    <input type="text" name="villageInNepali" id="villageInNepali"
+                                                        class="form-control" value="{{ old('villageInNepali') }}"
                                                         placeholder="{{ __('Village / Tole') }}">
                                                 </div>
                                                 <div class="form-group">
                                                     <div class="text text-danger">
-                                                        {{ $errors->first('contactNumberInEnglish') }}</div>
-                                                    <label for="contactNumberInEnglish">Contact Number<i
+                                                        {{ $errors->first('contactNumberInNepali') }}</div>
+                                                    <label for="contactNumberInNepali">Contact Number<i
                                                             class="text-danger">*</i></label>
-                                                    <input type="text" name="contactNumberInEnglish" id="contactNumberInEnglish"
-                                                        class="form-control" value="{{ old('contactNumberInEnglish') }}"
+                                                    <input type="text" name="contactNumberInNepali" id="contactNumberInNepali"
+                                                        class="form-control" value="{{ old('contactNumberInNepali') }}"
                                                         placeholder="Contact Number">
                                                 </div>
 

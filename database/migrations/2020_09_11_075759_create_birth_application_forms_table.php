@@ -18,54 +18,54 @@ class CreateBirthApplicationFormsTable extends Migration
             $table->unsignedBigInteger('health_post_id');
             $table->integer('babyIdentifyNumber')->unique();
 
-            $table->string('babyNameInNepali')->nullable();
             $table->string('babyNameInEnglish')->nullable();
+            $table->string('babyNameInNepali')->nullable();
 
-            $table->string('genderInNepali')->nullable();
-            $table->string('genderInEnglish');
+            $table->string('genderInEnglish')->nullable();
+            $table->string('genderInNepali');
 
-            $table->date('dobInNepali')->nullable();
             $table->date('dobInEnglish');
+            $table->date('dobInNepali');
 
 
-            $table->time('timeOfBirthInNepali')->nullable();
-            $table->time('timeOfBirthInEnglish');
+            $table->time('timeOfBirthInEnglish')->nullable();
+            $table->time('timeOfBirthInNepali');
 
-            $table->time('weightOfBabyInEnglish');
+            $table->integer('weightOfBabyInNepali');
 
-            $table->string('grandParentNameInNepali')->nullable();
             $table->string('grandParentNameInEnglish')->nullable();
+            $table->string('grandParentNameInNepali')->nullable();
 
-            $table->string('grandParentGenderInNepali')->nullable();
             $table->string('grandParentGenderInEnglish')->nullable();
+            $table->string('grandParentGenderInNepali')->nullable();
 
-            $table->string('fatherNameInNepali')->nullable();
-            $table->string('fatherNameInEnglish');
-            $table->string('motherNameInNepali')->nullable();
-            $table->string('motherNameInEnglish');
+            $table->string('fatherNameInEnglish')->nullable();
+            $table->string('fatherNameInNepali');
+            $table->string('motherNameInEnglish')->nullable();
+            $table->string('motherNameInNepali');
 
-            $table->string('provinceInNepali')->nullable();
-            $table->string('provinceInEnglish');
+            $table->string('provinceInEnglish')->nullable();
+            $table->string('provinceInNepali');
 
-            $table->string('districtInNepali')->nullable();
-            $table->string('districtInEnglish');
+            $table->string('districtInEnglish')->nullable();
+            $table->string('districtInNepali');
 
-            $table->string('municipalityInNepali')->nullable();
-            $table->string('municipalityInEnglish');
+            $table->string('municipalityInEnglish')->nullable();
+            $table->string('municipalityInNepali');
 
-            $table->string('villageInNepali')->nullable();
-            $table->string('villageInEnglish');
+            $table->string('villageInEnglish')->nullable();
+            $table->string('villageInNepali');
 
-            $table->string('wardNumberInNepali')->nullable();
-            $table->string('wardNumberInEnglish');
+            $table->string('wardNumberInEnglish')->nullable();
+            $table->string('wardNumberInNepali');
 
-            $table->string('houseNumberInNepali')->nullable();
             $table->string('houseNumberInEnglish')->nullable();
+            $table->string('houseNumberInNepali')->nullable();
 
-            $table->string('contactNumberInEnglish');
+            $table->string('contactNumberInNepali');
             $table->string('contactNumberInNeplai')->nullable();
 
-            $table->string('status')->nullable();
+            $table->string('status')->default('Pending');
             $table->foreign('health_post_id')->references('id')->on('health_posts')->onDelete('CASCADE');
 
 

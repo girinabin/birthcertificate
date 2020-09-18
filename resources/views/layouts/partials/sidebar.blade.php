@@ -27,7 +27,7 @@
     <!-- Sidebar Menu -->
     <nav class="mt-2">
       <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-
+        @can('superAdmin', App\User::class)
         <li class="nav-item has-treeview">
           <a href="#" class="nav-link">
             <i class="nav-icon fas fa-school"></i>
@@ -46,7 +46,9 @@
             </li>
           </ul>
         </li>
-
+        @endcan
+        
+        @can('admin', App\BirthApplicationForm::class)
         <li class="nav-item has-treeview">
           <a href="#" class="nav-link">
             <i class="nav-icon fas fa-school"></i>
@@ -65,6 +67,8 @@
             </li>
           </ul>
         </li>
+        @endcan
+        
 
        
 

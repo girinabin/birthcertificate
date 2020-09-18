@@ -42,7 +42,7 @@
                                     <div class="text text-danger">{{ $errors->first('password') }}</div>
                                     <label for="password">{{ __('Password') }}</label>
                                     <input type="text" name="password" id="password" class="form-control"
-                                        value="{{ old('password') }}" placeholder="{{ __('Password') }}" >
+                                        value="{{ old('password') }}" placeholder="{{ __('Enter Password') }}" >
                                 </div>
                                 <div class="form-group col-md-4 float-left">
                                     <div class="text text-danger">{{ $errors->first('registrationNumber') }}</div>
@@ -54,9 +54,9 @@
                                 <div class="form-group col-md-4 float-left">
                                     <div class="text text-danger">{{ $errors->first('registrationDate') }}</div>
                                     <label for="registrationDate">{{ __('Registration Date') }}</label>
-                                    <input  type="date" name="registrationDate" id="registrationDate"
+                                    <input  type="text" name="registrationDate" id="dobInEnglish"
                                         class="form-control" value="{{ old('registrationDate') }}"
-                                        placeholder="{{ __('Registration Date') }}" >
+                                        placeholder="yy-mm-dd" >
                                 </div>
                                 <div class="form-group col-md-4 float-left">
                                     <div class="text text-danger">{{ $errors->first('panNumber') }}</div>
@@ -104,8 +104,8 @@
                                     <label for="status">{{ __('Status') }}</label>
                                     <select name="status" id="status" class="form-control" value="{{ old('status') }}">
                                         <option disabled selected>Select status</option>
-                                        <option value="0">Inactive</option>
-                                        <option value="1" >Active</option>
+                                        <option value="0" {{ old('status')==0?'selected':'' }}>Inactive</option>
+                                        <option value="1" {{ old('status')==1?'selected':'' }} >Active</option>
                                     </select>
                                 </div>
                                 <div class="form-group col-md float-left">
