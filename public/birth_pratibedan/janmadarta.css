@@ -1,0 +1,170 @@
+body{
+	font-family: "Times New Roman", Times, serif;
+}
+
+.birthcerticate{
+	height: 1400px;
+	border: 1px solid #eee;
+	box-shadow: 0px 0px 10px 0px #c0c0c0;
+	padding: 20px;
+}
+
+/*.birthcertificate1
+{
+	margin-top: 140px 0px;
+}
+*/
+.topul li{
+	font-weight: bold;
+	font-size: 24px;
+	line-height: 36px;
+}
+
+
+.logo img{
+height: 110px;
+width: 120px;
+position: absolute;
+top: 0;
+left: 0;
+}
+
+.logo{
+	position: relative;
+}
+
+.certificatetop{
+	text-align: center;
+}
+
+ul li{
+	list-style: none;
+
+}
+
+.pramanpatra{
+	text-align: center;
+	margin:0px;
+}
+
+.pramanpatra h2{
+	font-size: 28px;
+	font-weight: bold;
+	border-bottom: 2px solid black;
+	display: inline-block;
+}
+
+.registration-field{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.regfield h6{
+	font-size: 22px;
+	line-height: 28px;
+	font-weight: bold;
+
+}
+
+.regrightfield h6{
+	font-size: 22px;
+	line-height: 28px;
+	font-weight: bold;
+}
+
+.regfield h4{
+font-weight: bold;
+line-height: 38px;
+font-size: 20px;
+}
+
+.regrightfield h4{
+font-weight: bold;
+line-height: 28px;
+font-size: 20px;
+
+}
+
+.regrightfield{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.birthdescp{
+	margin-top: 20px;
+}
+
+
+.birthdescp p{
+	text-align: justify;
+	font-size: 20px;
+	font-weight: bold;
+	line-height: 38px;
+}
+
+.birthdescp .mainparagraph{
+	font-size: 20px;
+	font-weight: bold;
+	line-height: 20px;
+	text-align: justify;
+}
+
+.issue-row{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	padding-top: 20px;
+	/*margin-bottom: 100px;*/
+}
+
+.nep-issue-list h4{
+	font-size: 20px;
+	font-weight: bold;
+	line-height: 28px;
+}
+
+.sthaniya h4{
+	font-size: 20px;
+	font-weight: bold;
+	line-height: 28px;
+
+}
+
+#issuedet{
+	text-align: center;
+	font-weight: bold;
+	font-size: 34px;
+}
+#issuedet1{
+	margin: 15px 0px;
+	font-weight: bold;
+	text-align: center;
+	font-size: 22px;
+}
+
+.issuedlist h4{
+	font-weight: bold;
+	line-height: 24px;
+	font-size: 22px;
+}
+
+.issuedto{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+/*.localreg{
+	display: flex;
+	justify-content: end;
+}*/
+
+
+.localreg h4{
+	font-weight: bold;
+	line-height: 24px;
+	font-size: 22px;
+
+}

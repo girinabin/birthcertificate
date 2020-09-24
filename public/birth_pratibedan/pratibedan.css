@@ -1,0 +1,109 @@
+
+.birthcertificate{
+
+    padding: 20px;
+    border: 10px solid #000;
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0.3) inset, 0 0 3px #0B76E5;
+    height: 1343px;
+    margin: 20px 0px;
+}
+ul li{
+    list-style: none;
+}
+
+.main-heading{
+    text-align: center;
+    padding-bottom: 46px;
+}
+
+.main-heading h2{
+    font-size: 46px;
+    font-weight: bold;
+}
+
+
+
+
+.toplist{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.left-corner span{
+    font-weight: bold;
+    font-size: 34px;
+
+}
+
+.right-corner li{
+    font-weight: bold;
+    font-size: 34px;
+}
+
+.main-par {
+    text-align: justify;
+
+}
+
+
+.main-par p{
+    font-size: 33px;
+    line-height: 60px;
+    font-weight: bold;
+}
+
+.pramanpatrahead{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.pramanpatralist .heading1{
+    font-weight: bold;
+    font-size: 34px;
+    line-height: 60px;
+    padding-top: 20px;
+}
+
+.pramanpatralist li{
+    font-size: 32px;
+    font-weight: bold;
+    line-height: 46px;
+}
+
+.karyalaya{
+    border: 2px solid #000;
+    padding: 60px 0px;
+    text-align: center;
+    padding-top: 70px;
+    border-radius: 15px;
+    margin-top: 30px;
+
+}
+
+
+
+
+.endnotice p{
+    font-size: 32px;
+    font-weight: bold;
+    line-height: 48px;
+    text-align: center;
+}
+
+@media print {
+  @page {
+    size: auto;
+    margin: 4mm;
+
+
+
+  }
+  .container {
+    width: 1170px;
+  }
+
+
+}
+

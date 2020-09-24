@@ -3,11 +3,14 @@
 namespace App\Http\Controllers;
 
 use App\BirthApplicationForm;
+use App\CertificateOfBirth;
 use App\HealthPost;
+use App\Http\Requests\storeBirthApplication;
+use App\Http\Requests\storeBirthCertificate;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Str;
+// use Illuminate\Support\Str;
 
 class BirthApplicationFormController extends Controller
 {
@@ -28,25 +31,10 @@ class BirthApplicationFormController extends Controller
         return view('backend.birthApplicationForm.create');
     }
 
-    public function store(Request $request){
+    public function store(storeBirthApplication $request){
         $this->authorize('admin',BirthApplicationForm::class);
 
-        $data = $request->validate([
-            'genderInNepali'=>'required',
-            'dobInNepali'=>'required',
-            'dobInEnglish'=>'required',
-            'timeOfBirthInNepali'=>'required',
-            'weightOfBabyInNepali'=>'required',
-            'fatherNameInNepali'=>'required',
-            'motherNameInNepali'=>'required',
-            'grandParentNameInNepali'=>'nullable|string',
-            'wardNumberInNepali'=>'required',
-            'villageInNepali'=>'required',
-            'provinceInNepali'=>'required',
-            'districtInNepali'=>'required',
-            'municipalityInNepali'=>'required',
-            'contactNumberInNepali'=>"required"
-        ]);
+       $data = $request->all();
         $numbers = range(0, 999999);
         shuffle($numbers);
         $final = array_slice($numbers, 0, 1);
@@ -59,34 +47,27 @@ class BirthApplicationFormController extends Controller
         }
     }
 
+    public function view(BirthApplicationForm $applicationForm){
+        return view('backend.birthApplicationForm.view',compact('applicationForm'));
+    }
+
     public function edit(BirthApplicationForm $applicationForm){
         $this->authorize('editBirthApplicationForm',$applicationForm);
         return view('backend.birthApplicationForm.edit',compact('applicationForm'));
     }
 
-    public function update(Request $request,BirthApplicationForm $applicationForm){
+    public function update(storeBirthApplication $request,BirthApplicationForm $applicationForm){
         $this->authorize('updateBirthApplicationForm',$applicationForm);
 
-
-        $data = $request->validate([
-            'genderInNepali'=>'required',
-            'dobInNepali'=>'required',
-            'dobInEnglish'=>'required',
-            'timeOfBirthInNepali'=>'required',
-            'weightOfBabyInNepali'=>'required',
-            'fatherNameInNepali'=>'required',
-            'motherNameInNepali'=>'required',
-            'grandParentNameInNepali'=>'nullable|string',
-            'wardNumberInNepali'=>'required',
-            'villageInNepali'=>'required',
-            'provinceInNepali'=>'required',
-            'districtInNepali'=>'required',
-            'municipalityInNepali'=>'required',
-            'contactNumberInNepali'=>"required"
-        ]);
+       $data = $request->all();
 
         $data = $request->except(['_token','_method']);
         $result = BirthApplicationForm::where('id',$applicationForm->id)->update($data);
+
+        
+        
+        
+
         if($result){
             return redirect()->route('birthApplicationForm.edit',$applicationForm->id)->with('success_message','Application Updated Successfully!');
         }

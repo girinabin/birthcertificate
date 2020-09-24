@@ -37,7 +37,7 @@
                                    @forelse ($healthPosts as $healthPost)
                                    <tr>
                                     <td>{{ strtoupper($healthPost->healthPostName) }}</td> 
-                                    <td>{{ strtoupper($healthPost->municipality->municipalityName) }}</td>
+                                    <td>{{ strtoupper($healthPost->municipality->municipalityNameInEnglish) }}</td>
                                     <td>{{ $healthPost->contactNumberFirst }}</td>
                                     <td>{{ $healthPost->contactNumberSecond }}</td>
 

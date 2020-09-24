@@ -15,7 +15,7 @@ class DatabaseSeeder extends Seeder
         // $this->call(UserSeeder::class);
         $user = User::Create([
             'name'=>'Nabin',
-            'email'=>'giri.nabin1994@gmail.com',
+            'email'=>'speedupcoders@gmail.com',
             'password'=>bcrypt('password')
         ]);
         $user->roles()->create([
@@ -23,9 +23,12 @@ class DatabaseSeeder extends Seeder
 
         ]);
         $user->municipality()->create([
-            'municipalityName'=>'Kolhabi',
-            'municipalityDistrict'=>'Bara',
-            'provinence'=>'Provinence2'
+            'municipalityNameInNepali'=>'काठमाडौं नगरपालिका',
+            'municipalityDistrictInNepali'=>'काठमाडौं ',
+            'provinceInNepali'=>'वाग्मती प्रदेश',
+            'municipalityNameInEnglish'=>'Kathmandu Municipality',
+            'municipalityDistrictInEnglish'=>'Kathmandu',
+            'provinceInEnglish'=>'Bagmati Province'
         ]);
     }
 }

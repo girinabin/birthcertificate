@@ -8,6 +8,6 @@ class CertificateOfBirth extends Model
 {
     protected $guarded = [];
     public function birthApplication(){
-        return $this->belongsTo(BirthApplication::class,'birth_application_form_id');
+        return $this->belongsTo(BirthApplicationForm::class,'birth_application_form_id');
     }
 }

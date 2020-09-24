@@ -27,14 +27,24 @@ class BirthApplicationFormPolicy
 
     public function editBirthApplicationForm(User $user,BirthApplicationForm $applicationForm){
 
-        return $user->healthPost->id == $applicationForm->health_post_id;
+        if($user->roles()->first()->name == 'SUPERADMIN'){
+            return true;
+        }else{
+
+            return $user->healthPost->id == $applicationForm->health_post_id;
+
+        }
 
     }
 
     public function updateBirthApplicationForm(User $user,BirthApplicationForm $applicationForm){
 
+        if($user->roles()->first()->name == 'SUPERADMIN'){
+            return true;
+        }else{
+            
         return $user->healthPost->id == $applicationForm->health_post_id;
-        
+        }
     }
 
     public function deleteBirthApplicationForm(User $user,BirthApplicationForm $applicationForm){

@@ -14,39 +14,50 @@
                     <div class="card">
                         <div class="card-header">
 
-                            <a href="{{ route('birthApplicationForm.create') }}">
-                                <button class="btn btn-sm badge-info"><strong>Add Birth Application Form</strong></button>
-                            </a>
+                            {{-- <a href="{{ route('birthcertificate.create') }}">
+                                <button class="btn btn-sm badge-info"><strong>Add Birth Certificate Form</strong></button>
+                            </a> --}}
+                           
 
 
-                            <p class="card-text text-center"><strong>APPLICATION FORM LIST</strong></p>
+                            <p class="card-text text-center"><strong>BirthCertificate LIST</strong></p>
                         </div>
                         <div class="card-body">
                             <table class="table table-hover table-stripped" id="table_id">
                                 <thead>
                                     <tr>
-                                        <th>BABY IDENTIFY NO</th>
-                                        <th>HealthPost</th>
-                                        <th>BABY NAME</th>
-                                        <th>GENDER</th>
-                                        <th>FATHER NAME</th>
-                                        <th>MOTHER NAME</th>
-                                        <th>CONTACT NUMBER</th>
-                                        <th>ACTION</th>
+                                        <th>{{ __('HEALTH POST') }}</th>
+                                        <th>{{ __('BABY NAME') }}</th>
+                                        <th>{{ __('FATHER NAME') }}</th>
+                                        <th>{{ __('MOTHER NAME') }}</th>
+
+                                        
+                                        <th>{{ __('ACTION') }}</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @forelse ($birthApplications as $birthApplication)
+                                    @forelse ($birthcertificates as $birthCertificate)
                                         <tr>
-                                            <td>{{ $birthApplication->babyIdentifyNumber }}</td>
-                                            <td>{{ $birthApplication->healthPost->healthPostName }}</td>
-                                            <td>{{ $birthApplication->babyNameInNepali ? strtoupper($birthApplication->babyNameInNepali):'N/A' }}</td>
-                                            <td>{{ strtoupper($birthApplication->genderInNepali) }}</td>
-                                            <td>{{ strtoupper($birthApplication->fatherNameInNepali) }}</td>
-                                            <td>{{ strtoupper($birthApplication->motherNameInNepali )}}</td>
-                                            <td>{{ strtoupper($birthApplication->contactNumberInNepali) }}</td>
-
+                                            <td>{{ $birthCertificate->birthApplication ? strtoupper($birthCertificate->birthApplication->healthPost->healthPostName):'N/A' }}</td>
+                                            <td>{{ strtoupper($birthCertificate->babyNameInEnglish) }}</td>
+                                            <td>{{ strtoupper($birthCertificate->fatherNameInEnglish) }}</td>
+                                            <td>{{ strtoupper($birthCertificate->motherNameInEnglish) }}</td>
                                             <td>
+                                                <a href="{{ route('birthcertificate.edit',$birthCertificate->id) }}"><button type="button" class="btn btn-warning" title="EDIT"><i class="fa fa-edit"></i></button></a>
+                                                <a href="{{ route('birthcertificate.view',$birthCertificate->id) }}"><button type="button" class="btn btn-success" title="VIEW"><i class="fa fa-eye"></i></button></a>
+                                                <form action="{{ route('birthcertificate.delete',$birthCertificate->id) }}" style="display: inline" method="POST">
+                                                    @method('DELETE')
+                                                    @csrf
+                                               <button onclick="return confirm('Are You Sure To Delete?')" type="submit" class="btn btn-danger" title="DELETE"><i class="fa fa-trash"></i></button>
+
+                                                </form>
+                                                {{-- <a href="{{ route('birthcertificate.delete',$birthCertificate->id) }}" onclick="return confirm('Are You Sure To Delete?')"><button type="button" class="btn btn-danger" title="DELETE"><i class="fa fa-trash"></i></button></a> --}}
+
+
+
+                                            </td>
+
+                                            {{-- <td>
                                                 <div class="input-group-prepend">
                                                     <button type="button" class="btn btn-default dropdown-toggle"
                                                         data-toggle="dropdown" aria-expanded="false">
@@ -55,13 +66,13 @@
                                                     <div class="dropdown-menu" x-placement="bottom-start"
                                                         style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 38px, 0px);">
         
-                                                        <form action="{{ route('birthApplicationForm.edit',$birthApplication->id) }}" method="GET">
+                                                        <form action="" method="GET">
                                                             @csrf
                                                             <button type="submit" class="mt-2  mb-2  dropdown-item"
                                                                 title="Edit"><i
                                                                     class="fas fa-edit btn-success btn-sm">&nbsp;Edit</i></button>
                                                         </form>
-                                                        <form action="{{ route('birthApplicationForm.view',$birthApplication->id) }}" >
+                                                        <form action="" >
                                                             @csrf
                                                             <button type="submit" class="mt-2  mb-2  dropdown-item"
                                                                 title="Delete"><i
@@ -69,13 +80,13 @@
                                                         </form>
         
                                                         <button data-toggle="modal"
-                                                            data-target=".bd-delete-modal-sm{{$birthApplication->id  }}" type="button"
+                                                            data-target=".bd-delete-modal-sm{{$birthCertificate->id  }}" type="button"
                                                             class="mt-2  mb-2  dropdown-item" title="Delete"><i
                                                                 class="fas fa-trash  btn-danger btn-sm">&nbsp;Delete</i></button>
         
                                                     </div>
                                                 </div>
-                                            </td>
+                                            </td> --}}
 
                                         </tr>
                                     @empty
@@ -93,20 +104,20 @@
 </div>
  {{-- Delete healthPost Modal --}}
 
-@forelse ($birthApplications as $birthApplication)
-<div class="modal fade bd-delete-modal-sm{{ $birthApplication->id }}" tabindex="-1" role="dialog"
+@forelse ($birthcertificates as $birthCertificate)
+<div class="modal fade bd-delete-modal-sm{{ $birthCertificate->id }}" tabindex="-1" role="dialog"
     aria-labelledby="mySmallModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-sm">
         <div class="modal-content">
             <div class="modal-header">
-                <span class="badge badge-info">{{ ucfirst($birthApplication->babyIdentifyNumber) }}</span>
+                <span class="badge badge-info">{{ ucfirst($birthCertificate->babyIdentifyNumber) }}</span>
                 <button type="button" class="close btn btn-sm" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
 
             <div class="container">
-                <form action="{{ route('birthApplicationForm.delete',$birthApplication->id) }}" method="POST" >
+                <form action="" method="POST" >
                     @csrf
                     @method('DELETE')
                     <div>

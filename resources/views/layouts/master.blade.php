@@ -9,10 +9,12 @@
   <title>BirthCenter Management</title>
 
   <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+  @yield('pratibedan')
+  @yield('janmadarta')
+
   <!--nepali date picker -->
   <link rel="stylesheet" type="text/css" href="{{ asset('nepalidatepicker/nepali.datepicker.v2.2.min.css') }}" />
   {{-- english date picker --}}
-  {{-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css"> --}}
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css">
 </head>
 
@@ -27,7 +29,6 @@
   <!-- nepali date picker -->
 <script type="text/javascript" src="{{ asset('nepalidatepicker/nepali.datepicker.v2.2.min.js') }}"></script>
 {{-- english daete picker --}}
-{{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script> --}}
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
   <script>
     $(document).ready( function () {
@@ -66,7 +67,7 @@
 
 	$(document).ready(function(){
 
-		$('#dobInEnglish').datepicker({
+		$('.dobInEnglish').datepicker({
 			dateFormat:"yy-mm-dd"
 		});
 

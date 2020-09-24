@@ -32,6 +32,9 @@ class CreateBirthApplicationFormsTable extends Migration
             $table->time('timeOfBirthInNepali');
 
             $table->integer('weightOfBabyInNepali');
+            
+            $table->string('numberOfBirthInNepali');
+            $table->string('birthTypeInNepali');
 
             $table->string('grandParentNameInEnglish')->nullable();
             $table->string('grandParentNameInNepali')->nullable();

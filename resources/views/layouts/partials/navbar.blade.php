@@ -27,7 +27,7 @@
       </a>
       <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
         <div class="text-center">
-          <a href="#" class="text-center"><button class="btn btn-sm"><i
+          <a href="{{ route('utility.passwordChange') }}" class="text-center"><button class="btn btn-sm"><i
                 class="fas fa-unlock-alt"></i>&nbsp;<span>Password Change</span></button></a>
           <form action="{{ route('logout') }}" method="POST">
             @csrf

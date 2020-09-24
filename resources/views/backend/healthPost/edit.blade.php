@@ -56,7 +56,7 @@
                                     <div class="text text-danger">{{ $errors->first('registrationDate') }}</div>
                                     <label for="registrationDate">{{ __('Registration Date') }}</label>
                                     <input  type="text" name="registrationDate" id="dobInEnglish"
-                                        class="form-control" value="{{ $healthPost->registrationDate }}"
+                                        class="form-control dobInEnglish" value="{{ $healthPost->registrationDate }}"
                                         placeholder="yy-mm-dd}" >
                                 </div>
                                 <div class="form-group col-md-4 float-left">

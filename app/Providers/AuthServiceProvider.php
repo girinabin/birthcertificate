@@ -17,6 +17,7 @@ class AuthServiceProvider extends ServiceProvider
         'App\User'=>'App\Policies\UserPolicy',
         // 'App\HealthPost'=>'App\Policies\HealthPostPolicy',
         'App\BirthApplicationForm'=>'App\Policies\BirthApplicationFormPolicy',
+        'App\CertificateOfBirth'=>'App\Policies\BirthCertificatePolicy'
 
     ];
 

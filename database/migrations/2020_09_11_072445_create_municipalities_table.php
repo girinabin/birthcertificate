@@ -16,9 +16,12 @@ class CreateMunicipalitiesTable extends Migration
         Schema::create('municipalities', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('user_id');
-            $table->string('municipalityName');
-            $table->string('municipalityDistrict');
-            $table->string('provinence');
+            $table->string('municipalityNameInNepali');
+            $table->string('municipalityDistrictInNepali');
+            $table->string('provinceInNepali');
+            $table->string('municipalityNameInEnglish');
+            $table->string('municipalityDistrictInEnglish');
+            $table->string('provinceInEnglish');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('CASCADE');
             $table->timestamps();
         });

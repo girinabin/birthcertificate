@@ -1,4 +1,4 @@
-  <footer class="main-footer " >
+  <footer class="main-footer no-print " >
     <div class="float-right d-none d-sm-inline">
       v3.0.3
     </div>

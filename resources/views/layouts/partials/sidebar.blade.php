@@ -7,7 +7,7 @@
       @if(Auth::user()->healthPost)
       <span class="brand-text font-weight-light">{{ Auth::user()->healthPost->healthPostName }}</span>
       @else
-      <span class="brand-text font-weight-light">{{ Auth::user()->municipality->municipalityName }}</span>
+      <span class="brand-text font-weight-light">{{ Auth::user()->municipality->municipalityNameInNepali }}</span>
 
       @endif
   </a>
@@ -68,6 +68,51 @@
           </ul>
         </li>
         @endcan
+
+        @can('superAdmin', App\CertificateOfBirth::class)
+        <li class="nav-item has-treeview">
+          <a href="#" class="nav-link">
+            <i class="nav-icon fas fa-school"></i>
+            <p>
+              Application Request
+              <i class="right fas fa-angle-left"></i>
+            </p>
+          </a>
+          <ul class="nav nav-treeview">
+            <li class="nav-item">
+
+              <a href="{{ route('birthapplicationrequest.index') }}" class="nav-link  ">
+                <i class="fas fa-eye"></i>
+                <p>View form</p>
+              </a>
+            </li>
+          </ul>
+        </li>
+        @endcan
+        
+
+        @can('superAdmin', App\CertificateOfBirth::class)
+        <li class="nav-item has-treeview">
+          <a href="#" class="nav-link">
+            <i class="nav-icon fas fa-school"></i>
+            <p>
+              BirthCertificate
+              <i class="right fas fa-angle-left"></i>
+            </p>
+          </a>
+          <ul class="nav nav-treeview">
+            <li class="nav-item">
+
+              <a href="{{ route('birthcertificate.index') }}" class="nav-link  ">
+                <i class="fas fa-eye"></i>
+                <p>View form</p>
+              </a>
+            </li>
+          </ul>
+        </li>
+        @endcan
+
+
         
 
        
